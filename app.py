@@ -66,7 +66,7 @@ def distribution(df, col):
 
 def comparison(df, x, y):
     plt.figure(figsize=(15, 10))
-    sns.barplot(x=x, y=y, hue='left', data=df, ci=None)
+    sns.barplot(x=x, y=y, hue='left', data=df, errorbar=None)
     plt.title(f'{x} vs {y}', fontsize=16, fontweight='bold')
     plt.savefig('static/' + 'comparison.png')
     plt.close()
@@ -93,7 +93,7 @@ def histogram(df, col):
     axes[0].set_title(f"Histogram of {col}", fontsize=16, fontweight='bold')
 
     # Plot the second histogram
-    sns.kdeplot(data=df, x='satisfaction_level', y='last_evaluation', hue='left', shade=True, ax=axes[1])
+    sns.kdeplot(data=df, x='satisfaction_level', y='last_evaluation', hue='left', fill=True, ax=axes[1])
     axes[1].set_title("Kernel Density Estimation", fontsize=16, fontweight='bold')
 
     plt.tight_layout()  # Adjust the layout to prevent overlapping
