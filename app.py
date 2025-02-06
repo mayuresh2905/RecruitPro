@@ -10,7 +10,7 @@ import pandas as pd
 app = Flask(__name__)
 
 # ======================================loading models and datasets================================
-df = pd.read_csv('notebook/HR_comma_sep.csv.crdownload')
+df = pd.read_csv('datasets/HR_comma_sep.csv.crdownload')
 model = pickle.load(open('models/model.pkl','rb'))
 scaler = pickle.load(open('models/scaler.pkl','rb'))
 
